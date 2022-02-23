@@ -1,5 +1,5 @@
 from flask import jsonify
-from abarrotes_api_rest.extensions import pwd_context, db
+from vet_api_rest.extensions import pwd_context, db
 
 
 class Usuario():

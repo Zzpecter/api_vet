@@ -1,7 +1,7 @@
 from flask import request
 from flask_restful import Resource
 from flask_jwt_extended import jwt_required
-from abarrotes_api_rest.models import Usuario
+from vet_api_rest.models import Usuario
 
 
 class UserResource(Resource):

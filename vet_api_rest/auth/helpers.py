@@ -5,8 +5,8 @@ https://github.com/vimalloc/flask-jwt-extended/blob/master/examples/blocklist_da
 """
 from datetime import datetime
 from flask_jwt_extended import decode_token
-from abarrotes_api_rest.extensions import db
-from abarrotes_api_rest.models.api_tokens import ApiTokens
+from vet_api_rest.extensions import db
+from vet_api_rest.models.api_tokens import ApiTokens
 
 
 def add_token_to_database(encoded_token, identity_claim):

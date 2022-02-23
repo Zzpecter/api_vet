@@ -1,19 +1,19 @@
 from flask import Flask
-from abarrotes_api_rest import api
-from abarrotes_api_rest import auth
-from abarrotes_api_rest import manage
-from abarrotes_api_rest.extensions import db
-from abarrotes_api_rest.extensions import jwt
+from vet_api_rest import api
+from vet_api_rest import auth
+from vet_api_rest import manage
+from vet_api_rest.extensions import db
+from vet_api_rest.extensions import jwt
 
 
 def create_app(testing=False):
     """Application factory, used to create application"""
-    app = Flask("abarrotes_api_rest")
-    app.config.from_object("abarrotes_api_rest.config")
+    app = Flask("vet_api_rest")
+    app.config.from_object("vet_api_rest.config")
 
     app.config['MYSQL_DATABASE_USER'] = "root"
     app.config['MYSQL_DATABASE_PASSWORD'] = "tryhard.python"
-    app.config['MYSQL_DATABASE_DB'] = "abarrotes_db"
+    app.config['MYSQL_DATABASE_DB'] = "vet_petshop_db"
     app.config['MYSQL_DATABASE_HOST'] = "localhost"
 
     if testing is True:

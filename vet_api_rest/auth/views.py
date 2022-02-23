@@ -7,9 +7,9 @@ from flask_jwt_extended import (
     get_jwt,
 )
 
-from abarrotes_api_rest.models import Usuario
-from abarrotes_api_rest.extensions import pwd_context, jwt
-from abarrotes_api_rest.auth.helpers import revocar_token, is_token_revoked, add_token_to_database
+from vet_api_rest.models import Usuario
+from vet_api_rest.extensions import pwd_context, jwt
+from vet_api_rest.auth.helpers import revocar_token, is_token_revoked, add_token_to_database
 
 
 blueprint = Blueprint("auth", __name__, url_prefix="/auth")
@@ -33,8 +33,8 @@ def login():
     if user is None or not pwd_context.verify(password_usuario, user['password_usuario']):
         return jsonify({"msg": "Bad credentials"}), 400
 
-    access_token = create_access_token(identity=user['id_entidad'])
-    refresh_token = create_refresh_token(identity=user['id_entidad'])
+    access_token = create_access_token(identity=user['id_usuario'])
+    refresh_token = create_refresh_token(identity=user['id_usuario'])
     add_token_to_database(access_token, app.config["JWT_IDENTITY_CLAIM"])
     add_token_to_database(refresh_token, app.config["JWT_IDENTITY_CLAIM"])
 
