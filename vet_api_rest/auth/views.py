@@ -143,7 +143,7 @@ def revoke_refresh_token():
 def user_loader_callback(jwt_headers, jwt_payload):
     identity = jwt_payload["sub"]
     print(f'jwt.user_lookup_loader . identity: {identity}')
-    usuario = Usuario(id_entidad=identity)
+    usuario = Usuario(id_usuario=identity)
     return usuario.seleccionar()
 
 
