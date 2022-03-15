@@ -7,5 +7,7 @@ from vet_api_rest.models.citas import Citas
 from vet_api_rest.models.cliente import Cliente
 from vet_api_rest.models.entidad import Entidad
 from vet_api_rest.models.proveedor import Proveedor
+from vet_api_rest.models.nivel import Nivel
+from vet_api_rest.models.persona import Persona
 __all__ = ["Usuario", "AlmacenMedicamentos", "AlmacenPetshop", "CategoriaMedicamento", "CategoriaProducto", "Citas",
-           "Cliente", "Entidad", "Proveedor"]
+           "Cliente", "Entidad", "Proveedor", "Nivel", "Persona"]

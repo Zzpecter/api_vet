@@ -3,7 +3,8 @@ from flask_restful import Api
 from vet_api_rest.api.resources import UserResource, UserList, AlmacenMedicamentosResource, AlmacenMedicamentosList, \
     AlmacenPetshopResource, AlmacenPetshopList, CategoriaMedicamentoResource, CategoriaMedicamentoList, \
     CategoriaProductoResource, CategoriaProductoList, CitasResource, CitasList, ClienteResource, ClienteList, \
-    EntidadResource, EntidadList, ProveedorResource, ProveedorList
+    EntidadResource, EntidadList, ProveedorResource, ProveedorList, NivelResource, NivelList, PersonaResource, \
+    PersonaList
 
 
 blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
@@ -28,4 +29,8 @@ api.add_resource(EntidadResource, "/entidad/<int:id_entidad>", endpoint="entidad
 api.add_resource(EntidadList, "/entidad", endpoint="entidad")
 api.add_resource(ProveedorResource, "/proveedores/<int:id_proveedor>", endpoint="proveedores_by_id")
 api.add_resource(ProveedorList, "/proveedores", endpoint="proveedores")
+api.add_resource(NivelResource, "/niveles/<int:id_nivel>", endpoint="niveles_by_id")
+api.add_resource(NivelList, "/niveles", endpoint="niveles")
+api.add_resource(PersonaResource, "/personas/<int:id_persona>", endpoint="personas_by_id")
+api.add_resource(PersonaList, "/personas", endpoint="personas")
 

@@ -7,9 +7,12 @@ from vet_api_rest.api.resources.citas import CitasResource, CitasList
 from vet_api_rest.api.resources.cliente import ClienteResource, ClienteList
 from vet_api_rest.api.resources.entidad import EntidadResource, EntidadList
 from vet_api_rest.api.resources.proveedor import ProveedorResource, ProveedorList
+from vet_api_rest.api.resources.nivel import NivelResource, NivelList
+from vet_api_rest.api.resources.persona import PersonaResource, PersonaList
 
 
 __all__ = ["UserResource", "UserList", "AlmacenMedicamentosResource", "AlmacenMedicamentosList",
            "AlmacenPetshopResource", "AlmacenPetshopList", "CategoriaMedicamentoResource", "CategoriaMedicamentoList",
            "CategoriaProductoResource", "CategoriaProductoList", "CitasResource", "CitasList", "ClienteResource",
-           "ClienteList", "EntidadResource", "EntidadList", "ProveedorResource", "ProveedorList"]
+           "ClienteList", "EntidadResource", "EntidadList", "ProveedorResource", "ProveedorList", "NivelResource",
+           "NivelList", "PersonaResource", "PersonaList"]
