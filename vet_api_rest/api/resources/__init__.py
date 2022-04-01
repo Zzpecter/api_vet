@@ -11,11 +11,17 @@ from vet_api_rest.api.resources.nivel import NivelResource, NivelList
 from vet_api_rest.api.resources.persona import PersonaResource, PersonaList
 from vet_api_rest.api.resources.compra import CompraResource, CompraList
 from vet_api_rest.api.resources.compra_medicamento import CompraMedicamentoList, CompraMedicamentoResource
-
+from vet_api_rest.api.resources.compra_producto import CompraProductoResource, CompraProductoList
+from vet_api_rest.api.resources.contacto import ContactoResource, ContactoList
+from vet_api_rest.api.resources.dosis_medicamento import DosisMedicamentoResource, DosisMedicamentoList
+from vet_api_rest.api.resources.historial_mascota import HistorialMascotaResource, HistorialMascotaList
+from vet_api_rest.api.resources.vistas_stock import MascotaCompletoList, MascotaCompletoResource
 
 __all__ = ["UserResource", "UserList", "AlmacenMedicamentosResource", "AlmacenMedicamentosList",
            "AlmacenPetshopResource", "AlmacenPetshopList", "CategoriaMedicamentoResource", "CategoriaMedicamentoList",
            "CategoriaProductoResource", "CategoriaProductoList", "CitasResource", "CitasList", "ClienteResource",
            "ClienteList", "EntidadResource", "EntidadList", "ProveedorResource", "ProveedorList", "NivelResource",
            "NivelList", "PersonaResource", "PersonaList", "CompraResource", "CompraList", "CompraMedicamentoResource",
-           "CompraMedicamentoList"]
+           "CompraMedicamentoList", "CompraProductoResource", "CompraProductoList", "ContactoResource", "ContactoList",
+           "DosisMedicamentoResource", "DosisMedicamentoList", "HistorialMascotaResource", "HistorialMascotaList",
+           "MascotaCompletoList", "MascotaCompletoResource"]

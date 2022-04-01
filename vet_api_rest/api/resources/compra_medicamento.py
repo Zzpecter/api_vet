@@ -20,10 +20,10 @@ class CompraMedicamentoResource(Resource):
         self.compra_medicamento.id_compra_medicamento = id_compra_medicamento
         print(f'put {__name__} endpoint; request: {request.json}')
 
-        self.compra_medicamento.id_usuario = request.json['id_usuario']
-        self.compra_medicamento.id_proveedor = request.json['id_proveedor']
-        self.compra_medicamento.monto_total = request.json['monto_total']
-        self.compra_medicamento.fecha_hora = request.json['fecha_hora']
+        self.compra_medicamento.id_compra = request.json['id_compra']
+        self.compra_medicamento.id_medicamento = request.json['id_medicamento']
+        self.compra_medicamento.precio_unitario = request.json['precio_unitario']
+        self.compra_medicamento.cantidad = request.json['cantidad']
         self.compra_medicamento.usuario_registro = request.json['usuario_registro']
 
         self.compra_medicamento.actualizar()
@@ -47,10 +47,10 @@ class CompraMedicamentoList(Resource):
 
     def post(self):
         print(f'post {__name__} endpoint; request: {request.json}')
-        self.compra_medicamento.id_usuario = request.json['id_usuario']
-        self.compra_medicamento.id_proveedor = request.json['id_proveedor']
-        self.compra_medicamento.monto_total = request.json['monto_total']
-        self.compra_medicamento.fecha_hora = request.json['fecha_hora']
+        self.compra_medicamento.id_compra = request.json['id_compra']
+        self.compra_medicamento.id_medicamento = request.json['id_medicamento']
+        self.compra_medicamento.precio_unitario = request.json['precio_unitario']
+        self.compra_medicamento.cantidad = request.json['cantidad']
         self.compra_medicamento.usuario_registro = request.json['usuario_registro']
 
         self.compra_medicamento.insertar()

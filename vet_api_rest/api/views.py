@@ -4,7 +4,9 @@ from vet_api_rest.api.resources import UserResource, UserList, AlmacenMedicament
     AlmacenPetshopResource, AlmacenPetshopList, CategoriaMedicamentoResource, CategoriaMedicamentoList, \
     CategoriaProductoResource, CategoriaProductoList, CitasResource, CitasList, ClienteResource, ClienteList, \
     EntidadResource, EntidadList, ProveedorResource, ProveedorList, NivelResource, NivelList, PersonaResource, \
-    PersonaList, CompraList, CompraResource, CompraMedicamentoResource, CompraMedicamentoList
+    PersonaList, CompraList, CompraResource, CompraMedicamentoResource, CompraMedicamentoList, CompraProductoList, \
+    CompraProductoResource, ContactoResource, ContactoList, DosisMedicamentoResource, DosisMedicamentoList, \
+    HistorialMascotaResource, HistorialMascotaList, MascotaCompletoList, MascotaCompletoResource
 
 
 blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
@@ -37,4 +39,16 @@ api.add_resource(CompraResource, "/compras/<int:id_compra>", endpoint="compras_b
 api.add_resource(CompraList, "/compras", endpoint="compras")
 api.add_resource(CompraMedicamentoResource, "/compra_medicamento/<int:id_compra_medicamento>", endpoint="compra_medicamento_by_id")
 api.add_resource(CompraMedicamentoList, "/compra_medicamento", endpoint="compra_medicamento")
+api.add_resource(CompraProductoResource, "/compra_producto/<int:id_compra_producto>", endpoint="compra_producto_by_id")
+api.add_resource(CompraProductoList, "/compra_producto", endpoint="compra_producto")
+api.add_resource(ContactoResource, "/contactos/<int:id_contacto>", endpoint="contactos_by_id")
+api.add_resource(ContactoList, "/contactos", endpoint="contactos")
+api.add_resource(DosisMedicamentoResource, "/dosis_medicamento/<int:id_dosis_medicamento>", endpoint="dosis_medicamento_by_id")
+api.add_resource(DosisMedicamentoList, "/dosis_medicamento", endpoint="dosis_medicamento")
+api.add_resource(HistorialMascotaResource, "/historial_mascota/<int:id_historial_mascota>", endpoint="historial_mascota_by_id")
+api.add_resource(HistorialMascotaList, "/historial_mascota", endpoint="historial_mascota")
+
+
+api.add_resource(MascotaCompletoResource, "/vistas/mascota_completo/<string:column>/<string:value>", endpoint="vi_mascota_completo_by_value")
+api.add_resource(MascotaCompletoList, "/vistas/mascota_completo", endpoint="vi_mascota_completo")
 

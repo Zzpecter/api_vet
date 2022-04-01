@@ -11,5 +11,13 @@ from vet_api_rest.models.nivel import Nivel
 from vet_api_rest.models.persona import Persona
 from vet_api_rest.models.compra import Compra
 from vet_api_rest.models.compra_medicamento import CompraMedicamento
+from vet_api_rest.models.compra_producto import CompraProducto
+from vet_api_rest.models.contacto import Contacto
+from vet_api_rest.models.dosis_medicamento import DosisMedicamento
+from vet_api_rest.models.historial_mascota import HistorialMascota
+from vet_api_rest.models.mascota import Mascota
+from vet_api_rest.models.vistas_stock import VistasStock
+from vet_api_rest.models.medicamento_almacen import MedicamentoAlmacen
 __all__ = ["Usuario", "AlmacenMedicamentos", "AlmacenPetshop", "CategoriaMedicamento", "CategoriaProducto", "Citas",
-           "Cliente", "Entidad", "Proveedor", "Nivel", "Persona", "Compra", "CompraMedicamento"]
+           "Cliente", "Entidad", "Proveedor", "Nivel", "Persona", "Compra", "CompraMedicamento", "CompraProducto",
+           "Contacto", "DosisMedicamento", "HistorialMascota", "Mascota", "VistasStock", "MedicamentoAlmacen"]
