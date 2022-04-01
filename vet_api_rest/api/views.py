@@ -4,7 +4,7 @@ from vet_api_rest.api.resources import UserResource, UserList, AlmacenMedicament
     AlmacenPetshopResource, AlmacenPetshopList, CategoriaMedicamentoResource, CategoriaMedicamentoList, \
     CategoriaProductoResource, CategoriaProductoList, CitasResource, CitasList, ClienteResource, ClienteList, \
     EntidadResource, EntidadList, ProveedorResource, ProveedorList, NivelResource, NivelList, PersonaResource, \
-    PersonaList
+    PersonaList, CompraList, CompraResource, CompraMedicamentoResource, CompraMedicamentoList
 
 
 blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
@@ -33,4 +33,8 @@ api.add_resource(NivelResource, "/niveles/<int:id_nivel>", endpoint="niveles_by_
 api.add_resource(NivelList, "/niveles", endpoint="niveles")
 api.add_resource(PersonaResource, "/personas/<int:id_persona>", endpoint="personas_by_id")
 api.add_resource(PersonaList, "/personas", endpoint="personas")
+api.add_resource(CompraResource, "/compras/<int:id_compra>", endpoint="compras_by_id")
+api.add_resource(CompraList, "/compras", endpoint="compras")
+api.add_resource(CompraMedicamentoResource, "/compra_medicamento/<int:id_compra_medicamento>", endpoint="compra_medicamento_by_id")
+api.add_resource(CompraMedicamentoList, "/compra_medicamento", endpoint="compra_medicamento")
 

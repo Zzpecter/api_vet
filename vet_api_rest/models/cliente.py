@@ -21,27 +21,37 @@ class Cliente():
         sql_query = 'SELECT * FROM vi_cliente'
         print(f'sending query to mySQL: {sql_query}')
         self.cursor.execute(sql_query)
-        print(description[0] for description in self.cursor.description)
-        r = [dict((self.cursor.description[i][0], value) for i, value in enumerate(row)) for row in self.cursor.fetchall()]
-        print(f'response from mySQL: {r}')
-        return jsonify(r)
+
+        all = self.cursor.fetchall()
+        if len(all) > 0:
+            r = [dict((self.cursor.description[i][0], value) for i, value in enumerate(row)) for row in all][0]
+            print(f'response from mySQL: {r}')
+            return jsonify(r)
+        return jsonify({"message": "cliente no encontrado"})
 
     def seleccionar(self):
         sql_query = f"SELECT * FROM vi_cliente WHERE id_cliente = {self.id_cliente}"
         print(f'sending query to mySQL: {sql_query}')
         self.cursor.execute(sql_query)
-        r = [dict((self.cursor.description[i][0], value) for i, value in enumerate(row)) for row in self.cursor.fetchall()][0]
-        print(f'response from mySQL: {r}')
-        return jsonify(r)
+
+        all = self.cursor.fetchall()
+        if len(all) > 0:
+            r = [dict((self.cursor.description[i][0], value) for i, value in enumerate(row)) for row in all][0]
+            print(f'response from mySQL: {r}')
+            return jsonify(r)
+        return jsonify({"message": "cliente no encontrado"})
 
     def seleccionar_por_nit(self):
-        sql_query = f"SELECT * FROM vi_usuario WHERE nit_ci = '{self.nit_ci}'"
+        sql_query = f"SELECT * FROM vi_cliente WHERE nit_ci = '{self.nit_ci}'"
         print(f'sending query to mySQL: {sql_query}')
         self.cursor.execute(sql_query)
-        print(description[0] for description in self.cursor.description)
-        r = [dict((self.cursor.description[i][0], value) for i, value in enumerate(row)) for row in self.cursor.fetchall()]
-        print(f'response from mySQL: {r}')
-        return r
+
+        all = self.cursor.fetchall()
+        if len(all) > 0:
+            r = [dict((self.cursor.description[i][0], value) for i, value in enumerate(row)) for row in all][0]
+            print(f'response from mySQL: {r}')
+            return jsonify(r)
+        return jsonify({"message": "cliente no encontrado"})
 
     def insertar(self):
         sql_query = f"INSERT INTO cliente (id_cliente, nombre_factura, nit_ci, nota, usuario_registro) VALUES " \
