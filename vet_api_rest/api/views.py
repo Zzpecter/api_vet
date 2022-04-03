@@ -6,7 +6,15 @@ from vet_api_rest.api.resources import UserResource, UserList, AlmacenMedicament
     EntidadResource, EntidadList, ProveedorResource, ProveedorList, NivelResource, NivelList, PersonaResource, \
     PersonaList, CompraList, CompraResource, CompraMedicamentoResource, CompraMedicamentoList, CompraProductoList, \
     CompraProductoResource, ContactoResource, ContactoList, DosisMedicamentoResource, DosisMedicamentoList, \
-    HistorialMascotaResource, HistorialMascotaList, MascotaCompletoList, MascotaCompletoResource
+    HistorialMascotaResource, HistorialMascotaList, MascotaCompletoList, MascotaCompletoResource, \
+    MedicamentoVentaResource, MedicamentoVentaList, MedicamentoAlmacenResource, MedicamentoAlmacenList, \
+    MedicamentoResource, MedicamentoList, ProductoAlmacenResource, ProductoAlmacenList, ProductoPorPagarResource, \
+    ProductoPorPagarList, ProductoVentaResource, ProductoVentaList, ProductoList, ProductoResource, RazaResource, \
+    RazaList, ServicioPorPagarList, ServicioPorPagarResource, ServicioVentaResource, ServicioVentaList, ServicioList, \
+    ServicioResource, TipoContactoResource, TipoContactoList, TipoMascotaResource, TipoMascotaList, \
+    TratamientosPendientesResource, TratamientosPendientesList, UnidadContenidoResource, UnidadContenidoList, \
+    VacunaResource, VacunaList, VentaResource, VentaList, MarcaProductoResource, MarcaProductoList, \
+    MarcaMedicamentoResource, MarcaMedicamentoList
 
 
 blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
@@ -47,6 +55,44 @@ api.add_resource(DosisMedicamentoResource, "/dosis_medicamento/<int:id_dosis_med
 api.add_resource(DosisMedicamentoList, "/dosis_medicamento", endpoint="dosis_medicamento")
 api.add_resource(HistorialMascotaResource, "/historial_mascota/<int:id_historial_mascota>", endpoint="historial_mascota_by_id")
 api.add_resource(HistorialMascotaList, "/historial_mascota", endpoint="historial_mascota")
+api.add_resource(MedicamentoVentaResource, "/medicamento_venta/<int:id_medicamento_venta>", endpoint="medicamento_venta_by_id")
+api.add_resource(MedicamentoVentaList, "/medicamento_venta", endpoint="medicamento_venta")
+api.add_resource(MedicamentoAlmacenResource, "/medicamento_almacen/<int:id_medicamento_almacen>", endpoint="medicamento_almacen_by_id")
+api.add_resource(MedicamentoAlmacenList, "/medicamento_almacen", endpoint="medicamento_almacen")
+api.add_resource(MedicamentoResource, "/medicamentos/<int:id_medicamento>", endpoint="medicamentos_by_id")
+api.add_resource(MedicamentoList, "/medicamentos", endpoint="medicamentos")
+api.add_resource(ProductoAlmacenResource, "/producto_almacen/<int:id_producto_almacen>", endpoint="producto_almacen_by_id")
+api.add_resource(ProductoAlmacenList, "/producto_almacen", endpoint="producto_almacen")
+api.add_resource(ProductoPorPagarResource, "/producto_por_pagar/<int:id_producto_por_pagar>", endpoint="producto_por_pagar_by_id")
+api.add_resource(ProductoPorPagarList, "/producto_por_pagar", endpoint="producto_por_pagar")
+api.add_resource(ProductoVentaResource, "/producto_venta/<int:id_producto_venta>", endpoint="producto_venta_by_id")
+api.add_resource(ProductoVentaList, "/producto_venta", endpoint="producto_venta")
+api.add_resource(ProductoResource, "/productos/<int:id_producto>", endpoint="producto_by_id")
+api.add_resource(ProductoList, "/productos", endpoint="productos")
+api.add_resource(RazaResource, "/razas/<int:id_raza>", endpoint="razas_by_id")
+api.add_resource(RazaList, "/razas", endpoint="razas")
+api.add_resource(ServicioPorPagarResource, "/servicio_por_pagar/<int:id_servicio_por_pagar>", endpoint="servicio_por_pagar_by_id")
+api.add_resource(ServicioPorPagarList, "/servicio_por_pagar", endpoint="servicio_por_pagar")
+api.add_resource(ServicioVentaResource, "/servicio_venta/<int:id_servicio_venta>", endpoint="servicio_venta_by_id")
+api.add_resource(ServicioVentaList, "/servicio_venta", endpoint="servicio_venta")
+api.add_resource(ServicioResource, "/servicios/<int:id_servicio>", endpoint="servicios_by_id")
+api.add_resource(ServicioList, "/servicios", endpoint="servicios")
+api.add_resource(TipoContactoResource, "/tipo_contacto/<int:id_tipo_contacto>", endpoint="tipo_contacto_by_id")
+api.add_resource(TipoContactoList, "/tipo_contacto", endpoint="tipo_contacto")
+api.add_resource(TipoMascotaResource, "/tipo_mascota/<int:id_tipo_mascota>", endpoint="tipo_mascota_by_id")
+api.add_resource(TipoMascotaList, "/tipo_mascota", endpoint="tipo_mascota")
+api.add_resource(TratamientosPendientesResource, "/tratamientos_pendientes/<int:id_tratamiento_pendiente>", endpoint="tratamientos_pendientes_by_id")
+api.add_resource(TratamientosPendientesList, "/tratamientos_pendientes", endpoint="tratamientos_pendientes")
+api.add_resource(UnidadContenidoResource, "/unidad_contenido/<int:id_unidad_contenido>", endpoint="unidad_contenido_by_id")
+api.add_resource(UnidadContenidoList, "/unidad_contenido", endpoint="unidad_contenido")
+api.add_resource(VacunaResource, "/vacunas/<int:id_vacuna>", endpoint="vacunas_by_id")
+api.add_resource(VacunaList, "/vacunas", endpoint="vacunas")
+api.add_resource(VentaResource, "/ventas/<int:id_venta>", endpoint="ventas_by_id")
+api.add_resource(VentaList, "/ventas", endpoint="ventas")
+api.add_resource(MarcaMedicamentoResource, "/marca_medicamento/<int:id_marca_medicamento>", endpoint="marca_medicamento_by_id")
+api.add_resource(MarcaMedicamentoList, "/marca_medicamento", endpoint="marca_medicamento")
+api.add_resource(MarcaProductoResource, "/marca_producto/<int:id_marca_producto>", endpoint="marca_producto_by_id")
+api.add_resource(MarcaProductoList, "/marca_producto", endpoint="marca_producto")
 
 
 api.add_resource(MascotaCompletoResource, "/vistas/mascota_completo/<string:column>/<string:value>", endpoint="vi_mascota_completo_by_value")
